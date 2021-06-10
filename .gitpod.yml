@@ -1,7 +1,7 @@
 image:
   file: .gitpod.dockerfile
 tasks:
- - init: . ${GITPOD_REPO_ROOT}/.vscode/init_tasks.sh
+  - init: . ${GITPOD_REPO_ROOT}/.vscode/init_tasks.sh
 vscode:
   extensions:
     - ms-python.python

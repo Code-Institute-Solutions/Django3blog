@@ -4,13 +4,13 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-6 masthead-text">
+            <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <div class="col-6 masthead-image">
+            <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -35,21 +35,7 @@
 
                     <div class="col-1">
                         <!-- The number of likes goes before the closing strong tag -->
-                        {% if user.is_authenticated %}
-                        <form action="{% url 'post_like' post.slug %}" method="POST">
-                            {% csrf_token %}
-
-                            {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><strong><i
-                                        class="fas fa-heart"></i></button>
-                            {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><strong><i
-                                        class="far fa-heart"></i></button>
-                            {% endif %}
-                        </form>
-                        {% else %}
-                        <strong class="text-secondary"><i class="far fa-heart"></i>
-                            {% endif %} {{ post.number_of_likes }} </strong>
+                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}

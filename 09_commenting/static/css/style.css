@@ -96,6 +96,16 @@ body {
     color: #E84610;
 }
 
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
 .btn-signup {
     background-color: #23BBBB;
     color: #fff;
@@ -116,4 +126,17 @@ body {
 .link:active {
     color: #445261;
     text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
 }

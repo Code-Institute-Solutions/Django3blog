@@ -3,13 +3,13 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-6 masthead-text">
+            <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1>{{ post.title }}</h1>
+                <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="text-muted">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <div class="col-6 masthead-image">
+            <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -50,11 +50,11 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h3>Comments:</h3>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
@@ -74,7 +74,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
             </div>
